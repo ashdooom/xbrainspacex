@@ -26,7 +26,6 @@ export default function Home() {
         const postsData = querySnapshot.docs.map((doc) => {
           const data = doc.data();
 
-          // Convert Firestore Timestamp to readable date string
           const date = data.date instanceof Timestamp ? data.date.toDate().toLocaleDateString("en-US") : "";
 
           return {

@@ -258,15 +258,15 @@
 .mew {
   height: 24vh;
   width: 20vh;
-  display: block; /* Ensures it behaves as a block element */
-  margin: 0 auto; /* Centers horizontally */
+  display: block; 
+  margin: 0 auto;
 }
 
 .dateMood {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers child elements horizontally */
-  justify-content: center; /* Centers child elements vertically */
+  align-items: center; 
+  justify-content: center; 
   color: #ff00c3;
 }
 
@@ -440,4 +440,10 @@
     justify-content: center;
     background-color: #000;
   }
+}
+
+@media (max-width: 1200px) {
+    .boxContainer {
+      width: 80%;
+    }
 }
