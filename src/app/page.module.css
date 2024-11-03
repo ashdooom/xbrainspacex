@@ -47,6 +47,7 @@
   gap: 2vh;
   margin-top: 2vh;
   align-items: flex-start;
+  
 }
 
 .columnContainer {
@@ -59,7 +60,7 @@
   flex-shrink: 1;
   width: 60vh;
   height: 60vh;
-  background-image: url("/images/gwoomy.webp");
+  background-image: url("/gwoomy.webp");
   background-size: cover;
   background-position: center;
   border: rgb(255, 0, 195) 1vh solid;
@@ -119,7 +120,7 @@
   flex-shrink: 1;
   width: 60vh;
   height: 70vh;
-  background-image: url("/images/gwoomy.webp");
+  background-image: url("/gwoomy.webp");
   background-size: cover;
   background-position: center;
   border: rgb(255, 0, 195) 1vh solid;
