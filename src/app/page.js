@@ -3,18 +3,18 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
-import xbrainstewx from "/public/images/xbrainstewx.png";
-import selfie from "/public/images/selfie.png";
-import onlineNow from "/public/images/onlineNow.gif";
-import marioStar from "/public/images/marioStar.gif";
-import diaryLogo from "/public/images/diary.png";
-import mew from "/public/images/mew.gif";
-import amy from "/public/images/amy.gif";
-import extended from "/public/images/extended.png";
-import Stars from "../components/Stars";
-import MusicPlayer from "../components/MusicPlayer";
+import xbrainstewx from "../public/images/xbrainstewx.png";
+import selfie from "../public/images/selfie.png";
+import onlineNow from "../public/images/onlineNow.gif";
+import marioStar from "../public/images/marioStar.gif";
+import diaryLogo from "../public/images/diary.png";
+import mew from "../public/images/mew.gif";
+import amy from "../public/images/amy.gif";
+import extended from "../public/images/extended.png";
+import Stars from "../components/Stars"; // Adjust path if necessary
+import MusicPlayer from "../components/MusicPlayer"; // Adjust path if necessary
 import { collection, getDocs, Timestamp } from "firebase/firestore";
-import { db } from "./firebaseConfig";
+import { db } from "./firebaseConfig"; // Adjust path if necessary
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -25,14 +25,8 @@ export default function Home() {
         const querySnapshot = await getDocs(collection(db, "blogPosts"));
         const postsData = querySnapshot.docs.map((doc) => {
           const data = doc.data();
-
           const date = data.date instanceof Timestamp ? data.date.toDate().toLocaleDateString("en-US") : "";
-
-          return {
-            id: doc.id,
-            ...data,
-            date,
-          };
+          return { id: doc.id, ...data, date };
         });
         setPosts(postsData);
       } catch (error) {
@@ -53,7 +47,7 @@ export default function Home() {
           </div>
           <div>
             <p className={styles.promo}>
-              Want a website like this? Need some artwork or a logo? Visit my page at
+              want a website like this? need some artwork or a logo? visit my page at
               <a target="_blank" rel="noopener noreferrer" className={styles.brainLink} href="https://xbrainstewx.com"> xbrainstewx.com </a>
               or shoot me an email at
               <a href="mailto:ashley@xbrainstewx.com" className={styles.brainLink}> ashley@xbrainstewx.com</a> :3
@@ -125,8 +119,7 @@ export default function Home() {
                   <div className={styles.diaryBoxContainer}>
                     <div className={styles.diaryBox}>
                       <div className={styles.mew}>
-                      <Image className={styles.mew} src={mew} alt="Mew Image" />
-                      <br />
+                        <Image className={styles.mew} src={mew} alt="Mew Image" />
                       </div>
                       {posts.length > 0 ? (
                         posts.map((post) => (
@@ -137,7 +130,6 @@ export default function Home() {
                               mood: {post.mood}
                             </div>
                             <p>{post.post}</p>
-                            {/* Star Rating */}
                             <Stars postId={post.id} />
                             <hr />
                           </div>
@@ -150,7 +142,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> {/* End of boxContainer */}
         </div>
       </main>
     </div>
