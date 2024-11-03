@@ -2,7 +2,6 @@
   --gray-rgb: 0, 0, 0;
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
   --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
 
@@ -10,10 +9,10 @@
   grid-template-rows: 20px 1fr 20px;
   align-items: center;
   justify-items: center;
-  min-height: 100svh;
+  min-height: 100vh;
   padding: 80px;
   gap: 64px;
-  font-family: var(--font-geist-sans);
+  font-family: monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,148 +20,260 @@
     --gray-rgb: 255, 255, 255;
     --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
     --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
     --button-primary-hover: #ccc;
     --button-secondary-hover: #1a1a1a;
   }
 }
 
-.main {
+.pageContainer {
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+  align-items: center;
 }
 
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
-}
-
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
-}
-
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-weight: 600;
-}
-
-.ctas {
+.brain {
+  margin-top: 100vh;
+  height: 40vh;
+  width: 110vh;
+  background-image: url("/images/brain-image.webp"); 
+  background-size: cover;
+  background-position: center;
   display: flex;
-  gap: 16px;
+  justify-content: center;
+  align-items: center;
 }
 
-.ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
-  border: none;
-  border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
-  cursor: pointer;
+.boxContainer {
+  display: flex;
+  flex-direction: row; /* Horizontal layout for larger screens */
+  gap: 2vh;
+  margin-top: 2vh;
+  align-items: flex-start;
+}
+
+.aboutMe {
+  flex-shrink: 1;
+  height: 60vh;
+  width: 60vh;
+  background-image: url("/images/gwoomy.webp");
+  background-size: cover;
+  background-position: center;
+  border: rgb(255, 0, 195) 1vh solid;
+}
+
+.name {
+  color: #000000;
+  border: rgb(0, 0, 0) 1vh solid;
+  background-color: rgb(255, 0, 195);
+  padding: 1vh;
+}
+
+.aboutContainer {
+  display: flex;
+  align-items: center;
+  gap: 2vh;
+  flex-direction: column; /* Default to column for smaller screens */
+}
+
+.selfieMusic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vh;
+}
+
+.aslContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1vh;
+  margin-top: 2vh;
+  position: relative;
+}
+
+.selfie {
+  height: 30vh;
+  width: 30vh;
+  margin: 3vh;
+  border: rgb(0, 0, 0) 1vh solid;
+}
+
+.asl {
+  color: #000000;
+  font-size: 2vh;
+  border: rgb(0, 0, 0) 1vh solid;
+  background-color: rgb(255, 0, 170);
+  padding: 1vh;
+  flex-direction: column;
+}
+
+.marioStar {
+  height: 15vh;
+  width: 15vh;
+}
+
+.onlineNow {
+  height: 9vh;
+  width: 17vh;
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
 }
 
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
-}
-
-a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 180px;
-}
-
-.footer {
-  grid-row-start: 3;
+.music {
+  width: 80%;
+  margin-top: 2vh;
   display: flex;
-  gap: 24px;
+  justify-content: center;
+  position: relative;
+  background-color: #000;
 }
 
-.footer a {
+.diary {
+  flex-shrink: 1;
+  height: 70vh;
+  width: 60vh;
+  background-image: url("/images/gwoomy.webp");
+  background-size: cover;
+  background-position: center;
+  border: rgb(255, 0, 195) 1vh solid;
+}
+
+.brainLink {
+  color: rgb(255, 0, 195);
+}
+
+.promo {
+  text-align: center;
+}
+.diaryContainer {
   display: flex;
+  flex-direction: column; /* Stack items vertically */
   align-items: center;
-  gap: 8px;
+  justify-content: center;
 }
 
-.footer img {
-  flex-shrink: 0;
+.diaryLogo {
+  width: 50vh;
+  height: 20vh;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
+.diaryBox {
+  height: 45vh;
+  width: 50vh;
+  background-color: #000;
+  margin-top: 2vh; 
+  overflow: scroll;
+}
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
+.diaryBoxContainer {
+  display: flex;
+  flex-direction: column;
+}
 
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
+.diaryText {
+  text-align: center;
+}
+
+.dateMood {
+  color: rgb(255, 0, 195);
+}
+
+.mew {
+  height: 24vh;
+  width: 20vh;
+}
+
+/* Desktop Layout */
+@media (min-width: 957px) {
+  .aboutContainer {
+    flex-direction: row; /* Place selfieMusic and aslContainer side-by-side */
+    gap: 3vh;
   }
 }
 
-@media (max-width: 600px) {
+/* Mobile Layout */
+@media (max-width: 956px) {
   .page {
-    padding: 32px;
-    padding-bottom: 80px;
+    margin-top: 45vh; 
+    height: 100vh;
+    padding: 32px; 
   }
 
-  .main {
+  .brain {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    padding-top: 10vh;
   }
 
-  .main ol {
-    text-align: center;
+  .boxContainer {
+    display: flex;
+    flex-direction: column; /* Stack items vertically on mobile */
+    align-items: center;
+    gap: 2vh;
+    height: auto;
   }
 
-  .ctas {
+  .aboutMe, .diary {
+    width: 80vw;
+    height: auto;
+  }
+
+  .selfie {
+    height: 35vh;
+    width: 35vh;
+    margin: 0 auto; 
+    margin-top: 3vh;
+}
+
+
+  .marioStar {
+    height: 10vh;
+    width: 10vh;
+  }
+
+  .name {
+    color: #000000;
+    border: rgb(0, 0, 0) 1vh solid;
+    background-color: rgb(255, 0, 195);
+    padding: 1vh;
+  }
+
+  .aslContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+    margin-top: 2vh;
+  }
+
+  .aboutContainer {
     flex-direction: column;
   }
 
-  .ctas a {
-    font-size: 14px;
-    height: 40px;
-    padding: 0 16px;
+  .diary {
+    height: 70vh;
   }
 
-  a.secondary {
-    min-width: auto;
+  .diaryLogo {
+    width: 30vh;
+    height: 20vh;
   }
 
-  .footer {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+  .diaryBox {
+    height: 45vh;
+    width: 35vh;
+    background-color: #000;
+    margin-top: 2vh; 
+    overflow: scroll;
   }
-}
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+
+  .musicPlayer {
+    text-align: center;
   }
 }
