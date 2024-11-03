@@ -20,14 +20,13 @@ export default function Home() {
           </div>
           <div>
           <p className={styles.promo}>
-  Want a website like this? Need some artwork or a logo? Visit my page at 
+  want a website like this? Need some artwork or a logo? visit my page at 
   <a 
     target="_blank" 
     rel="noopener noreferrer" 
     className={styles.brainLink} 
     href="https://xbrainstewx.com"
-  >
-    xbrainstewx.com
+  > xbrainstewx.com
   </a>, 
   or shoot me an email at 
   <a 
