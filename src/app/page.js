@@ -11,8 +11,8 @@ import diaryLogo from "/public/diary.png";
 import mew from "/public/mew.gif";
 import amy from "/public/amy.gif";
 import extended from "/public/extended.png";
-import Stars from "./components/Stars";
-import MusicPlayer from "./components/MusicPlayer";
+import Stars from "../components/Stars";
+import MusicPlayer from "../components/MusicPlayer";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "./firebaseConfig"; 
 
