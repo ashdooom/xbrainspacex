@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { doc, getDoc, updateDoc, increment } from "firebase/firestore";
 import { db } from "../app/firebaseConfig";
-import styles from "../page.module.css";
+import styles from "../app/page.module.css"
 
 const Stars = ({ postId }) => {
   const [starCount, setStarCount] = useState(0);
