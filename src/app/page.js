@@ -3,18 +3,18 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
-import xbrainstewx from "../public/images/xbrainstewx.png";
-import selfie from "../public/images/selfie.png";
-import onlineNow from "../public/images/onlineNow.gif";
-import marioStar from "../public/images/marioStar.gif";
-import diaryLogo from "../public/images/diary.png";
-import mew from "../public/images/mew.gif";
-import amy from "../public/images/amy.gif";
-import extended from "../public/images/extended.png";
-import Stars from "../components/Stars"; // Adjust path if necessary
-import MusicPlayer from "../components/MusicPlayer"; // Adjust path if necessary
+import xbrainstewx from "/public/xbrainstewx.png";
+import selfie from "/public//selfie.png";
+import onlineNow from "/public/onlineNow.gif";
+import marioStar from "/public/marioStar.gif";
+import diaryLogo from "/public/diary.png";
+import mew from "/public/mew.gif";
+import amy from "/public/amy.gif";
+import extended from "/public/extended.png";
+import Stars from "./components/Stars"; 
+import MusicPlayer from "./components/MusicPlayer";
 import { collection, getDocs, Timestamp } from "firebase/firestore";
-import { db } from "./firebaseConfig"; // Adjust path if necessary
+import { db } from "./firebaseConfig"; 
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
