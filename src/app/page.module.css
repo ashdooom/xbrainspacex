@@ -4,7 +4,6 @@
   --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
-
   display: grid;
   grid-template-rows: 20px 1fr 20px;
   align-items: center;
@@ -35,7 +34,7 @@
   margin-top: 100vh;
   height: 40vh;
   width: 110vh;
-  background-image: url("/images/brain-image.webp"); 
+  background-image: url("/images/brain-image.webp");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -45,21 +44,88 @@
 
 .boxContainer {
   display: flex;
-  flex-direction: row; 
   gap: 2vh;
   margin-top: 2vh;
   align-items: flex-start;
 }
 
+.columnContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
 .aboutMe {
   flex-shrink: 1;
-  height: 60vh;
   width: 60vh;
+  height: 60vh;
   background-image: url("/images/gwoomy.webp");
   background-size: cover;
   background-position: center;
   border: rgb(255, 0, 195) 1vh solid;
 }
+
+.url {
+  width: 60vh;
+  height: 13vh;
+  background-color: #ff00c3;
+  border: rgb(0, 0, 0) 1vh solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1vh;
+  text-align: center;
+  margin-top: 2vh;
+}
+
+.urlText {
+  color: #000;
+  text-align: center;
+}
+
+.urlText:hover {
+  color: #04ff00;
+}
+
+.columnContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  align-items: center;
+}
+
+.extended {
+  background-color: #ff00c3;
+  width: 60vh;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2vh;
+}
+
+.extendedImg {
+  width: 55vh;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2vh;
+  padding: 1vh;
+}
+
+.diary {
+  flex-shrink: 1;
+  width: 60vh;
+  height: 70vh;
+  background-image: url("/images/gwoomy.webp");
+  background-size: cover;
+  background-position: center;
+  border: rgb(255, 0, 195) 1vh solid;
+  position: relative;
+}
+
 
 .name {
   color: #000000;
@@ -82,34 +148,6 @@
   margin-top: 3vh;
 }
 
-.aslContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1vh;
-  margin-top: 2vh;
-  position: relative;
-}
-
-.selfie {
-  height: 30vh;
-  width: 30vh;
-  border: rgb(0, 0, 0) 1vh solid;
-}
-
-.asl {
-  color: #000000;
-  font-size: 2vh;
-  border: rgb(0, 0, 0) 1vh solid;
-  background-color: rgb(255, 0, 170);
-  padding: 1vh;
-  flex-direction: column;
-}
-
-.marioStar {
-  height: 15vh;
-  width: 15vh;
-}
 
 .onlineNow {
   height: 9vh;
@@ -123,7 +161,53 @@
 .amy {
   height: 15vh;
   width: 10vh;
-  margin-top: 5vh;
+}
+
+.headlineContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5vh; 
+  margin-top: 2vh;
+}
+
+.quote {
+  font-style: italic;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  padding: 1vh;
+  margin: 0;
+}
+
+.marioStar {
+  height: 15vh;
+  width: 15vh;
+  margin-top: 0.5vh; 
+}
+
+.aslContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1vh;
+  margin-top: 1vh; 
+}
+
+.asl {
+  color: #000000;
+  font-size: 2vh;
+  border: rgb(0, 0, 0) 1vh solid;
+  background-color: rgb(255, 0, 170);
+  padding: 1vh;
+  text-align: center;
+}
+
+.selfie {
+  height: 30vh;
+  width: 30vh;
+  border: rgb(0, 0, 0) 1vh solid;
+  margin-top: 2vh; 
 }
 
 .music {
@@ -135,16 +219,6 @@
   background-color: #000;
 }
 
-.diary {
-  flex-shrink: 1;
-  height: 70vh;
-  width: 60vh;
-  background-image: url("/images/gwoomy.webp");
-  background-size: cover;
-  background-position: center;
-  border: rgb(255, 0, 195) 1vh solid;
-}
-
 .brainLink {
   color: rgb(255, 0, 195);
 }
@@ -152,9 +226,10 @@
 .promo {
   text-align: center;
 }
+
 .diaryContainer {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -168,7 +243,7 @@
   height: 45vh;
   width: 50vh;
   background-color: #000;
-  margin-top: 2vh; 
+  margin-top: 2vh;
   overflow: scroll;
 }
 
@@ -185,102 +260,181 @@
   color: rgb(255, 0, 195);
 }
 
+
+
 .mew {
   height: 24vh;
   width: 20vh;
 }
 
+.extended {
+  height: 10vh;
+  position: relative;
+}
 
+.headline {
+  background-color: #000;
+  font-style: italic;
+  text-align: center;
+  margin: 2vh;
+}
 
-/* Desktop Layout */
 @media (min-width: 957px) {
   .aboutContainer {
-    flex-direction: row; /* Place selfieMusic and aslContainer side-by-side */
+    flex-direction: row;
+    /* Align selfieMusic and aslContainer side-by-side */
     gap: 3vh;
   }
 }
 
-/* Mobile Layout */
-@media (max-width: 956px) {
+@media (max-width: 957px) {
   .page {
-    margin-top: 45vh; 
-    height: 100vh;
-    padding: 32px; 
+    height: auto;
+    min-height: 100vh;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .brain {
-    width: 100%;
-    height: 30vh;
+    width: 90vw;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 10vh;
+    margin-top: 10vh;
   }
 
   .boxContainer {
     display: flex;
-    flex-direction: column; /* Stack items vertically on mobile */
+    flex-direction: column;
     align-items: center;
     gap: 2vh;
+    width: 90vw;
+  }
+
+  .aboutMe {
+    width: auto;
+    background-image: url("/images/gwoomy.webp");
+    background-size: cover;
+    background-position: center;
+    border: rgb(255, 0, 195) 1vh solid;
+  }
+
+  .aboutMe {
     height: auto;
   }
 
-  .aboutMe, .diary {
-    width: 80vw;
+  .url {
+    background-color: #ff00c3;
+    padding: 2vh;
+    text-align: center;
+    width: 54vh;
+  }
+
+  .urlText {
+    color: #000;
+    text-align: center;
+  }
+
+  .urlText:hover {
+    color: #04ff00;
+  }
+
+  .extended {
+    background-color: #ff00c3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh;
+    width: 52vh;
+    margin: 0 auto;
+    margin-bottom: 2vh;
+  }
+
+  .extendedImg {
+    width: 80%;
     height: auto;
+    margin: 0 auto;
+  }
+
+.diaryLogo {
+  margin-top: 10vh;
+}
+
+  .diary {
+    height: auto;
+    display: flex;
+    width: 52vh;
+  }
+
+  .diaryBox {
+    width: 85%;
+    height: 80vh;
+    background-color: #000;
+    overflow-y: auto;
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-sizing: border-box;
+  }
+
+  .diaryBoxContainer {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    /* Centers the diary box vertically */
+    align-items: center;
+    /* Centers the diary box horizontally */
+    padding-top: 2vh;
+    /* Optional padding for more spacing */
+    box-sizing: border-box;
   }
 
   .selfie {
-    height: 35vh;
-    width: 35vh;
-    margin: 0 auto; 
+    height: 25vh;
+    width: 25vh;
+    margin: 0 auto;
     margin-top: 3vh;
-}
-
+  }
 
   .marioStar {
-    height: 10vh;
-    width: 10vh;
+    height: 8vh;
+    width: 8vh;
   }
 
   .name {
-    color: #000000;
+    color: #000;
     border: rgb(0, 0, 0) 1vh solid;
     background-color: rgb(255, 0, 195);
     padding: 1vh;
   }
 
-  .aslContainer {
+  .aslContainer,
+  .aboutContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1vh;
-    margin-top: 2vh;
   }
 
-  .aboutContainer {
-    flex-direction: column;
-  }
-
-  .diary {
-    height: 70vh;
-  }
-
-  .diaryLogo {
-    width: 30vh;
-    height: 20vh;
-  }
-
-  .diaryBox {
-    height: 45vh;
-    width: 35vh;
-    background-color: #000;
-    margin-top: 2vh; 
-    overflow: scroll;
-  }
-
-
-  .musicPlayer {
+  .diaryText,
+  .promo {
     text-align: center;
+    padding: 1vh;
+  }
+
+  .mew {
+    height: 30vh;
+    width: 20vh;
+  }
+
+  .music {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    background-color: #000;
   }
 }
