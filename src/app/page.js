@@ -88,11 +88,9 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-
-              {/* URL Section */}
               <div className={styles.url}>
                 <p>
-                  xbrainspacex urls:
+                  <i>xbrainspacex urls:</i>
                   <br />
                   <a className={styles.urlText} href="https://xbrainstewx.com">main page</a>
                   <br />
@@ -108,9 +106,12 @@ export default function Home() {
             {/* Right Column */}
             <div className={styles.rightColumn}>
               <div className={styles.extended}>
-                <Image className={styles.extendedImg} src={extended} alt="Extended Image" />
+                <div>
+                  <p>
+                    <a className={styles.ashdooom} href="https://xbrainstewx.com">ashdooom!</a> is in your extended network
+                  </p>
+                </div>
               </div>
-
               <div className={styles.diary}>
                 <div className={styles.diaryContainer}>
                   <Image className={styles.diaryLogo} src={diaryLogo} alt="Diary Logo" />

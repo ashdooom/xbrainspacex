@@ -69,8 +69,8 @@
 .url {
   width: 60vh;
   height: 13vh;
-  background-color: #ff00c3;
-  border: rgb(0, 0, 0) 1vh solid;
+  background-color: #000000;
+  border:#ff00c3 5px solid;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -81,12 +81,20 @@
 }
 
 .urlText {
-  color: #000;
+  color: #ffffff;
   text-align: center;
 }
 
 .urlText:hover {
-  color: #04ff00;
+  color: #ff00c3;
+}
+
+.ashdooom {
+  color: rgb(255, 0, 195);
+}
+
+.ashdooom:hover {
+  color: #fff;
 }
 
 .columnContainer {
@@ -97,13 +105,14 @@
 }
 
 .extended {
-  background-color: #ff00c3;
+  background-color: #000000;
   width: 60vh;
   height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 2vh;
+  border: #ff00c3 5px solid;
 }
 
 .extendedImg {
@@ -219,6 +228,7 @@
   justify-content: center;
   position: relative;
   background-color: #000;
+  height: 10vh;
 }
 
 .brainLink {
@@ -344,7 +354,7 @@
     align-items: center;
     margin: 0 auto;
     height: auto;
-    width: auto;
+    width: 100%;
   }
 
   .aboutContainer {
@@ -352,20 +362,20 @@
     flex-direction: column;
     align-items: center;
     gap: 3vh;
-    width: auto;
+    width: 0%;
     justify-content: center;
     height: auto;
   }
 
   .url {
-    background-color: #ff00c3;
+    background-color: #000000;
     padding: 2vh;
     text-align: center;
-    width: 54vh;
+    width: 45vh;
   }
 
   .urlText {
-    color: #000;
+    color: #ffffff;
     text-align: center;
   }
 
@@ -374,12 +384,12 @@
   }
 
   .extended {
-    background-color: #ff00c3;
+    background-color: #000000;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1vh;
-    width: 52vh;
+    width: 85%;
     margin: 0 auto;
     margin-bottom: 2vh;
   }
@@ -394,12 +404,25 @@
     margin-top: 10vh;
   }
 
-  .diary {
+  .diaryBoxContainer {
+    height: 100vh;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    box-sizing: border-box;
+  }
+  
+  .diary,
+  .boxContainer {
     height: auto;
     display: flex;
-    width: 52vh;
+    width: 85%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin: 0 auto;
   }
-
+  
   .diaryBox {
     width: 85%;
     height: 80vh;
@@ -411,16 +434,9 @@
     align-items: flex-start;
     justify-content: flex-start;
     box-sizing: border-box;
+
   }
 
-  .diaryBoxContainer {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 2vh;
-    box-sizing: border-box;
-  }
 
   .selfie {
     height: 25vh;
@@ -432,5 +448,16 @@
   .marioStar {
     height: 8vh;
     width: 8vh;
+  }
+
+  .music {
+    width: 80%;
+    margin-top: 2vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color: #000;
+    height: 10vh;
+    width: 35vh;
   }
 }
