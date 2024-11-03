@@ -33,9 +33,7 @@ export default function Home() {
   <a 
     href="mailto:ashley@xbrainstewx.com" 
     className={styles.brainLink}
-  >
-    ashley@xbrainstewx.com
-  </a> :3
+  > ashley@xbrainstewx.com</a> :3
 </p>
 
           </div>
