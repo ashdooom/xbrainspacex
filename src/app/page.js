@@ -20,7 +20,7 @@ export default function Home() {
           </div>
           <div>
             <p className={styles.promo}>
-              want a website like this? need some artwork or a logo? visit my page at <a target="_blank" rel="noopener noreferrer" className={styles.brainLink} href="https://xbrainstewx.com">xbrainstewx.com</a>
+              want a website like this? need some artwork or a logo? visit my page at <a target="_blank" rel="noopener noreferrer" className={styles.brainLink} href="https://xbrainstewx.com">xbrainstewx.com</a>, or shoot me an email ashley@xbrainstewx.com :3
             </p>
           </div>
           <div className={styles.boxContainer}>
