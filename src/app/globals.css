@@ -11,8 +11,10 @@
 }
 
 html, body {
-  height: auto;
+  height: 100%;
   overflow-y: auto;
+  margin: 0;
+  padding: 0;
 }
 
 
