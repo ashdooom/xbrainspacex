@@ -4,17 +4,16 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 import xbrainstewx from "/public/xbrainstewx.png";
-import selfie from "/public//selfie.png";
+import selfie from "/public/selfie.png";
 import onlineNow from "/public/onlineNow.gif";
 import marioStar from "/public/marioStar.gif";
 import diaryLogo from "/public/diary.png";
 import mew from "/public/mew.gif";
 import amy from "/public/amy.gif";
 import extended from "/public/extended.png";
-import gwoomy from "/public/gwoomy.webp";
-import Stars from "./components/Stars";; 
+import Stars from "./components/Stars";
 import MusicPlayer from "./components/MusicPlayer";
-import { collection, getDocs, Timestamp } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { db } from "./firebaseConfig"; 
 
 export default function Home() {
@@ -26,7 +25,10 @@ export default function Home() {
         const querySnapshot = await getDocs(collection(db, "blogPosts"));
         const postsData = querySnapshot.docs.map((doc) => {
           const data = doc.data();
-          const date = data.date instanceof Timestamp ? data.date.toDate().toLocaleDateString("en-US") : "";
+          
+          // Directly use the date field as it exists in Firebase
+          const date = data.date || "Date not available";
+          
           return { id: doc.id, ...data, date };
         });
         setPosts(postsData);
@@ -48,7 +50,7 @@ export default function Home() {
           </div>
           <div>
             <p className={styles.promo}>
-              want a website like this? need some artwork or a logo? visit my page at
+              Want a website like this? Need some artwork or a logo? Visit my page at
               <a target="_blank" rel="noopener noreferrer" className={styles.brainLink} href="https://xbrainstewx.com"> xbrainstewx.com </a>
               or shoot me an email at
               <a href="mailto:ashley@xbrainstewx.com" className={styles.brainLink}> ashley@xbrainstewx.com</a> :3
@@ -58,7 +60,6 @@ export default function Home() {
           <div className={styles.boxContainer}>
             {/* Left Column */}
             <div className={styles.leftColumn}>
-              {/* About Me Section */}
               <div className={styles.aboutMe}>
                 <div className={styles.aboutContainer}>
                   <div className={styles.selfieMusic}>
@@ -108,12 +109,10 @@ export default function Home() {
 
             {/* Right Column */}
             <div className={styles.rightColumn}>
-              {/* Extended Section */}
               <div className={styles.extended}>
                 <Image className={styles.extendedImg} src={extended} alt="Extended Image" />
               </div>
 
-              {/* Diary Section */}
               <div className={styles.diary}>
                 <div className={styles.diaryContainer}>
                   <Image className={styles.diaryLogo} src={diaryLogo} alt="Diary Logo" />
