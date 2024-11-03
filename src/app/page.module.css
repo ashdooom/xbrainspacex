@@ -329,7 +329,7 @@
 
   .aboutMe {
     width: auto;
-    background-image: url("/images/gwoomy.webp");
+    background-image: url("/gwoomy.webp");
     background-size: cover;
     background-position: center;
     border: rgb(255, 0, 195) 1vh solid;
@@ -399,11 +399,8 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-    /* Centers the diary box vertically */
     align-items: center;
-    /* Centers the diary box horizontally */
     padding-top: 2vh;
-    /* Optional padding for more spacing */
     box-sizing: border-box;
   }
 
