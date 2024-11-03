@@ -380,7 +380,7 @@
   }
 
   .urlText:hover {
-    color: #04ff00;
+    color: #ff00c3;
   }
 
   .extended {
@@ -391,7 +391,7 @@
     padding: 1vh;
     width: 85%;
     margin: 0 auto;
-    margin-bottom: 2vh;
+    margin-bottom: 5vh;
   }
 
   .diaryLogo {

@@ -107,7 +107,7 @@ export default function Home() {
             <div className={styles.rightColumn}>
               <div className={styles.extended}>
                 <div>
-                  <p className={styles.urlText}>
+                  <p className={styles.url}>
                     <a className={styles.ashdooom} href="https://xbrainstewx.com">ashdooom!</a> is in your extended network
                   </p>
                 </div>
