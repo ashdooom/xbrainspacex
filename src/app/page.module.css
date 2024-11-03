@@ -296,15 +296,21 @@
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 956px) {
+
+  .main {
+    width: 10vh;
+  }
   .page {
-    height: auto;
     min-height: 100vh;
-    padding: 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+    justify-content: center; 
+    padding: 16px;
+    box-sizing: border-box; 
+}
+
 
   .brain {
     width: 90vw;
@@ -315,12 +321,17 @@
     margin-top: 10vh;
   }
 
+  .promo {
+    margin: 10vh;
+  }
+
   .boxContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2vh;
-   
+    margin: 16px;
+    width: 50%;
   }
 
   .aboutMe {
@@ -333,132 +344,93 @@
     align-items: center;
     margin: 0 auto;
     height: auto;
+    width: auto;
+  }
+
+  .aboutContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vh;
+    width: auto;
+    justify-content: center;
+    height: auto;
+  }
+
+  .url {
+    background-color: #ff00c3;
+    padding: 2vh;
+    text-align: center;
+    width: 54vh;
+  }
+
+  .urlText {
+    color: #000;
+    text-align: center;
+  }
+
+  .urlText:hover {
+    color: #04ff00;
+  }
+
+  .extended {
+    background-color: #ff00c3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh;
+    width: 52vh;
+    margin: 0 auto;
+    margin-bottom: 2vh;
+  }
+
+  .extendedImg {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .diaryLogo {
+    margin-top: 10vh;
+  }
+
+  .diary {
+    height: auto;
+    display: flex;
     width: 52vh;
   }
 
-    .aboutContainer {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 3vh;
-      width: auto;
-      justify-content: center;
-      height: auto;
-    }
-
-
-    .url {
-      background-color: #ff00c3;
-      padding: 2vh;
-      text-align: center;
-      width: 54vh;
-    }
-
-    .urlText {
-      color: #000;
-      text-align: center;
-    }
-
-    .urlText:hover {
-      color: #04ff00;
-    }
-
-    .extended {
-      background-color: #ff00c3;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 1vh;
-      width: 52vh;
-      margin: 0 auto;
-      margin-bottom: 2vh;
-    }
-
-    .extendedImg {
-      width: 80%;
-      height: auto;
-      margin: 0 auto;
-    }
-
-    .diaryLogo {
-      margin-top: 10vh;
-    }
-
-    .diary {
-      height: auto;
-      display: flex;
-      width: 52vh;
-    }
-
-    .diaryBox {
-      width: 85%;
-      height: 80vh;
-      background-color: #000;
-      overflow-y: auto;
-      padding: 2vh;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      box-sizing: border-box;
-    }
-
-    .diaryBoxContainer {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding-top: 2vh;
-      box-sizing: border-box;
-    }
-
-    .selfie {
-      height: 25vh;
-      width: 25vh;
-      margin: 0 auto;
-      margin-top: 3vh;
-    }
-
-    .marioStar {
-      height: 8vh;
-      width: 8vh;
-    }
-
-    .name {
-      color: #000;
-      border: rgb(0, 0, 0) 1vh solid;
-      background-color: rgb(255, 0, 195);
-      padding: 1vh;
-    }
-
-    .aslContainer,
-    .aboutContainer {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .diaryText,
-    .promo {
-      text-align: center;
-      padding: 1vh;
-    }
-
-    .mew {
-      height: 30vh;
-      width: 20vh;
-    }
-
-    .music {
-      width: 90%;
-      display: flex;
-      justify-content: center;
-      background-color: #000;
-    }
+  .diaryBox {
+    width: 85%;
+    height: 80vh;
+    background-color: #000;
+    overflow-y: auto;
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-sizing: border-box;
   }
 
-@media (max-width: 832px) {
-  .boxContainer {
-    width: auto;
+  .diaryBoxContainer {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2vh;
+    box-sizing: border-box;
+  }
+
+  .selfie {
+    height: 25vh;
+    width: 25vh;
+    margin: 0 auto;
+    margin-top: 3vh;
+  }
+
+  .marioStar {
+    height: 8vh;
+    width: 8vh;
   }
 }

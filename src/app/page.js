@@ -14,7 +14,7 @@ import extended from "/public/extended.png";
 import Stars from "../components/Stars";
 import MusicPlayer from "../components/MusicPlayer";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "./firebaseConfig"; 
+import { db } from "./firebaseConfig";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -25,9 +25,9 @@ export default function Home() {
         const querySnapshot = await getDocs(collection(db, "blogPosts"));
         const postsData = querySnapshot.docs.map((doc) => {
           const data = doc.data();
-          
+
           const date = data.date || "Date not available";
-          
+
           return { id: doc.id, ...data, date };
         });
         setPosts(postsData);
@@ -57,7 +57,6 @@ export default function Home() {
           </div>
 
           <div className={styles.boxContainer}>
-            {/* Left Column */}
             <div className={styles.leftColumn}>
               <div className={styles.aboutMe}>
                 <div className={styles.aboutContainer}>
