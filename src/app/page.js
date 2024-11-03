@@ -26,7 +26,6 @@ export default function Home() {
         const postsData = querySnapshot.docs.map((doc) => {
           const data = doc.data();
           
-          // Directly use the date field as it exists in Firebase
           const date = data.date || "Date not available";
           
           return { id: doc.id, ...data, date };
@@ -50,7 +49,7 @@ export default function Home() {
           </div>
           <div>
             <p className={styles.promo}>
-              Want a website like this? Need some artwork or a logo? Visit my page at
+              want a website like this? need some artwork or a logo? visit my page at
               <a target="_blank" rel="noopener noreferrer" className={styles.brainLink} href="https://xbrainstewx.com"> xbrainstewx.com </a>
               or shoot me an email at
               <a href="mailto:ashley@xbrainstewx.com" className={styles.brainLink}> ashley@xbrainstewx.com</a> :3
@@ -142,7 +141,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div> {/* End of boxContainer */}
+          </div>
         </div>
       </main>
     </div>
