@@ -13,7 +13,6 @@
   padding: 80px;
   gap: 64px;
   font-family: monospace;
-  overflow: auto; /* Enable scrolling */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,7 +32,7 @@
 }
 
 .brain {
-  margin-top: 0; /* Remove large margin for better fit */
+  margin-top: 100vh;
   height: 40vh;
   width: 110vh;
   background-image: url("/images/brain-image.webp"); 
@@ -46,7 +45,7 @@
 
 .boxContainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: row; /* Horizontal layout for larger screens */
   gap: 2vh;
   margin-top: 2vh;
   align-items: flex-start;
@@ -73,7 +72,7 @@
   display: flex;
   align-items: center;
   gap: 2vh;
-  flex-direction: column;
+  flex-direction: column; /* Default to column for smaller screens */
 }
 
 .selfieMusic {
@@ -95,7 +94,7 @@
 .selfie {
   height: 30vh;
   width: 30vh;
-  margin: 3vh auto;
+  margin: 3vh;
   border: rgb(0, 0, 0) 1vh solid;
 }
 
@@ -116,6 +115,7 @@
 .onlineNow {
   height: 9vh;
   width: 17vh;
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,10 +147,9 @@
 .promo {
   text-align: center;
 }
-
 .diaryContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Stack items vertically */
   align-items: center;
   justify-content: center;
 }
@@ -165,7 +164,7 @@
   width: 50vh;
   background-color: #000;
   margin-top: 2vh; 
-  overflow: auto;
+  overflow: scroll;
 }
 
 .diaryBoxContainer {
@@ -186,10 +185,12 @@
   width: 20vh;
 }
 
+
+
 /* Desktop Layout */
 @media (min-width: 957px) {
   .aboutContainer {
-    flex-direction: row;
+    flex-direction: row; /* Place selfieMusic and aslContainer side-by-side */
     gap: 3vh;
   }
 }
@@ -197,9 +198,9 @@
 /* Mobile Layout */
 @media (max-width: 956px) {
   .page {
-    padding-top: 20px; /* Use padding instead of margin */
-    min-height: 100vh; /* Ensure full viewport height without cutoff */
-    padding: 32px;
+    margin-top: 45vh; 
+    height: 100vh;
+    padding: 32px; 
   }
 
   .brain {
@@ -213,7 +214,7 @@
 
   .boxContainer {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack items vertically on mobile */
     align-items: center;
     gap: 2vh;
     height: auto;
@@ -227,12 +228,21 @@
   .selfie {
     height: 35vh;
     width: 35vh;
+    margin: 0 auto; 
     margin-top: 3vh;
-  }
+}
+
 
   .marioStar {
     height: 10vh;
     width: 10vh;
+  }
+
+  .name {
+    color: #000000;
+    border: rgb(0, 0, 0) 1vh solid;
+    background-color: rgb(255, 0, 195);
+    padding: 1vh;
   }
 
   .aslContainer {
@@ -241,6 +251,14 @@
     align-items: center;
     gap: 1vh;
     margin-top: 2vh;
+  }
+
+  .aboutContainer {
+    flex-direction: column;
+  }
+
+  .diary {
+    height: 70vh;
   }
 
   .diaryLogo {
@@ -253,6 +271,11 @@
     width: 35vh;
     background-color: #000;
     margin-top: 2vh; 
-    overflow: auto;
+    overflow: scroll;
+  }
+
+
+  .musicPlayer {
+    text-align: center;
   }
 }
