@@ -255,17 +255,21 @@
 .diaryText {
   text-align: center;
 }
-
-.dateMood {
-  color: rgb(255, 0, 195);
-}
-
-
-
 .mew {
   height: 24vh;
   width: 20vh;
+  display: block; /* Ensures it behaves as a block element */
+  margin: 0 auto; /* Centers horizontally */
 }
+
+.dateMood {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers child elements horizontally */
+  justify-content: center; /* Centers child elements vertically */
+  color: #ff00c3;
+}
+
 
 .extended {
   height: 10vh;
@@ -282,7 +286,6 @@
 @media (min-width: 957px) {
   .aboutContainer {
     flex-direction: row;
-    /* Align selfieMusic and aslContainer side-by-side */
     gap: 3vh;
   }
 }

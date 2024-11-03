@@ -1,36 +1,70 @@
 "use client";
 
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
-import xbrainstewx from '/public/images/xbrainstewx.png';
-import selfie from '/public/images/selfie.png';
-import onlineNow from '/public/images/onlineNow.gif';
-import marioStar from '/public/images/marioStar.gif';
-import diary from '/public/images/diary.png';
-import mew from '/public/images/mew.gif';
-import amy from '/public/images/amy.gif';
-import extended from '/public/images/extended.png';
-import MusicPlayer from "./Components/MusicPlayer";
+import xbrainstewx from "/public/images/xbrainstewx.png";
+import selfie from "/public/images/selfie.png";
+import onlineNow from "/public/images/onlineNow.gif";
+import marioStar from "/public/images/marioStar.gif";
+import diaryLogo from "/public/images/diary.png";
+import mew from "/public/images/mew.gif";
+import amy from "/public/images/amy.gif";
+import extended from "/public/images/extended.png";
+import Stars from "./components/Stars";
+import MusicPlayer from "./components/MusicPlayer";
+import { collection, getDocs, Timestamp } from "firebase/firestore";
+import { db } from "./firebaseConfig";
 
 export default function Home() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "blogPosts"));
+        const postsData = querySnapshot.docs.map((doc) => {
+          const data = doc.data();
+
+          // Convert Firestore Timestamp to readable date string
+          const date = data.date instanceof Timestamp ? data.date.toDate().toLocaleDateString("en-US") : "";
+
+          return {
+            id: doc.id,
+            ...data,
+            date,
+          };
+        });
+        setPosts(postsData);
+      } catch (error) {
+        console.error("Error fetching posts:", error);
+      }
+    };
+
+    fetchPosts();
+  }, []);
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
         <div className={styles.pageContainer}>
+          {/* Header Section */}
           <div>
             <Image className={styles.brain} src={xbrainstewx} alt="Brain Image" />
           </div>
           <div>
             <p className={styles.promo}>
-              want a website like this? Need some artwork or a logo? visit my page at
+              Want a website like this? Need some artwork or a logo? Visit my page at
               <a target="_blank" rel="noopener noreferrer" className={styles.brainLink} href="https://xbrainstewx.com"> xbrainstewx.com </a>
-or shoot me an email at
+              or shoot me an email at
               <a href="mailto:ashley@xbrainstewx.com" className={styles.brainLink}> ashley@xbrainstewx.com</a> :3
             </p>
           </div>
 
           <div className={styles.boxContainer}>
+            {/* Left Column */}
             <div className={styles.leftColumn}>
+              {/* About Me Section */}
               <div className={styles.aboutMe}>
                 <div className={styles.aboutContainer}>
                   <div className={styles.selfieMusic}>
@@ -62,6 +96,7 @@ or shoot me an email at
                 </div>
               </div>
 
+              {/* URL Section */}
               <div className={styles.url}>
                 <p>
                   xbrainspacex urls:
@@ -77,52 +112,45 @@ or shoot me an email at
               </div>
             </div>
 
+            {/* Right Column */}
             <div className={styles.rightColumn}>
+              {/* Extended Section */}
               <div className={styles.extended}>
                 <Image className={styles.extendedImg} src={extended} alt="Extended Image" />
               </div>
 
+              {/* Diary Section */}
               <div className={styles.diary}>
                 <div className={styles.diaryContainer}>
-                  <Image className={styles.diaryLogo} src={diary} alt="Diary Logo" />
+                  <Image className={styles.diaryLogo} src={diaryLogo} alt="Diary Logo" />
                   <div className={styles.diaryBoxContainer}>
                     <div className={styles.diaryBox}>
-                      <div className={styles.diaryText}>
-                        <div className={styles.dateMood}>
-                          <Image className={styles.mew} src={mew} alt="Mew Image" />
-                          <br />
-                          11.2.24
-                          <br />
-                          mood: satisfied
-                        </div>
-                        <p className={styles.diaryText}>
-                          whoaaaa welcome!! i was bored and decided to revamp my original myspace-esque website i initially created! it was my first project (which is something i adore and cherish) and it took me 2 months!!!! but this website i wrapped up in a single night. its crazy how far my coding has come, its true when they say practice makes perfect. im going to be updating my blog periodically and of course if you want to request a commission feel free hmu, i am happy to work within budgets or even the bartering system if you feel like you have something to swap i will hear you out!!!! but ya im exhausted now and my eyes hurt from staring at the screen so g2g ima go eep. :3
-                        </p>
-
-                        <div className={styles.dateMood}>
-                          2.24.23
-                          <br />
-                          mood: excited!
-                        </div>
-                        <p>
-                          new diary entry! i havent updated this since i launched my little website. i had a few bugs here
-                          and there, so my page was down for maintenance. my awesome and sexy husband Ryan is helping me sign up for a coding bootcamp... nervous but excited :3 smell ya later
-                        </p>
-
-                        <div className={styles.dateMood}>
-                          1.11.23
-                          <br />
-                          mood: accomplished + exhausted
-                        </div>
-                        <p>
-                          yo im almost done building my website. id like to shoutout redbull, youtube, and my little hands for helpin me out with this fun project. enjoy my little babies.
-                        </p>
+                      <div className={styles.mew}>
+                      <Image className={styles.mew} src={mew} alt="Mew Image" />
+                      <br />
                       </div>
+                      {posts.length > 0 ? (
+                        posts.map((post) => (
+                          <div key={post.id} className={styles.diaryText}>
+                            <div className={styles.dateMood}>
+                              {post.date}
+                              <br />
+                              mood: {post.mood}
+                            </div>
+                            <p>{post.post}</p>
+                            {/* Star Rating */}
+                            <Stars postId={post.id} />
+                            <hr />
+                          </div>
+                        ))
+                      ) : (
+                        <p>Loading posts...</p>
+                      )}
                     </div>
                   </div>
                 </div>
               </div>
-            </div> 
+            </div>
           </div>
         </div>
       </main>
