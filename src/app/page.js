@@ -59,11 +59,25 @@ export default function Home() {
                       <div className={styles.dateMood}>
                         <Image className={styles.mew} src={mew} />
                         <br />
+                        <br />
+                        11.2.24
+                        <br />
+                        <br />
+                        mood: satisfied
+                        <br />
+                        <br />
+                        </div>
+                        <p className={styles.diaryText}>
+                          whoaaaa welcome!! i was bored and decided to revamp my original myspace-esque website i initially created! it was my first project (which is something i adore and cherish) and it took me 2 months!!!! but this website i wrapped up in a single night. its crazy how far my coding has come, its true when they say practice makes perfect. im going to be updating my blog periodically and of course if you want to request a commission feel free hmu, i am happy to work within budgets or even the bartering system if you feel like you have something to swap i will hear you out!!!! but ya im exhausted now and my eyes hurt from staring at the screen so g2g ima go eep. :3
+                        </p>
+                        <br />
+                        <br />
+                        <div className={styles.dateMood}>
                         2.24.23
                         <br />
                         <br />
                         mood: excited!
-                      </div>
+                        </div>
                       <br />
                       <br />
                       new diary entry! i havent updated this since i launched my little website. i had a few bugs here
@@ -102,6 +116,10 @@ export default function Home() {
                       me through my school werk and the building of this website. this page is soley for the girls
                       gays and theys.
                       enjoy my little babies.
+                      <br />
+                      <br />
+                      <br />
+                      <br />
                     </div>
                   </div>
                 </div>
