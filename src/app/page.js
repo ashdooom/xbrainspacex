@@ -8,6 +8,7 @@ import onlineNow from '/public/images/onlineNow.gif';
 import marioStar from '/public/images/marioStar.gif';
 import diary from '/public/images/diary.png';
 import mew from '/public/images/mew.gif';
+import amy from '/public/images/amy.gif';
 import MusicPlayer from "./Components/MusicPlayer";
 
 export default function Home() {
@@ -19,21 +20,21 @@ export default function Home() {
             <Image className={styles.brain} src={xbrainstewx} />
           </div>
           <div>
-          <p className={styles.promo}>
-  want a website like this? need some artwork or a logo? visit my page at 
-  <a 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    className={styles.brainLink} 
-    href="https://xbrainstewx.com"
-  > xbrainstewx.com
-  </a>, 
-  or shoot me an email at 
-  <a 
-    href="mailto:ashley@xbrainstewx.com" 
-    className={styles.brainLink}
-  > ashley@xbrainstewx.com</a> :3
-</p>
+            <p className={styles.promo}>
+              want a website like this? need some artwork or a logo? visit my page at
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.brainLink}
+                href="https://xbrainstewx.com"
+              > xbrainstewx.com
+              </a>,
+              or shoot me an email at
+              <a
+                href="mailto:ashley@xbrainstewx.com"
+                className={styles.brainLink}
+              > ashley@xbrainstewx.com</a> :3
+            </p>
 
           </div>
           <div className={styles.boxContainer}>
@@ -43,6 +44,9 @@ export default function Home() {
                   <Image className={styles.selfie} src={selfie} />
                   <div className={styles.music}>
                     <MusicPlayer />
+                  </div>
+                  <div>
+                    <Image className={styles.amy} src={amy} />
                   </div>
                 </div>
                 <div className={styles.aslContainer}>
@@ -79,18 +83,18 @@ export default function Home() {
                         mood: satisfied
                         <br />
                         <br />
-                        </div>
-                        <p className={styles.diaryText}>
-                          whoaaaa welcome!! i was bored and decided to revamp my original myspace-esque website i initially created! it was my first project (which is something i adore and cherish) and it took me 2 months!!!! but this website i wrapped up in a single night. its crazy how far my coding has come, its true when they say practice makes perfect. im going to be updating my blog periodically and of course if you want to request a commission feel free hmu, i am happy to work within budgets or even the bartering system if you feel like you have something to swap i will hear you out!!!! but ya im exhausted now and my eyes hurt from staring at the screen so g2g ima go eep. :3
-                        </p>
-                        <br />
-                        <br />
-                        <div className={styles.dateMood}>
+                      </div>
+                      <p className={styles.diaryText}>
+                        whoaaaa welcome!! i was bored and decided to revamp my original myspace-esque website i initially created! it was my first project (which is something i adore and cherish) and it took me 2 months!!!! but this website i wrapped up in a single night. its crazy how far my coding has come, its true when they say practice makes perfect. im going to be updating my blog periodically and of course if you want to request a commission feel free hmu, i am happy to work within budgets or even the bartering system if you feel like you have something to swap i will hear you out!!!! but ya im exhausted now and my eyes hurt from staring at the screen so g2g ima go eep. :3
+                      </p>
+                      <br />
+                      <br />
+                      <div className={styles.dateMood}>
                         2.24.23
                         <br />
                         <br />
                         mood: excited!
-                        </div>
+                      </div>
                       <br />
                       <br />
                       new diary entry! i havent updated this since i launched my little website. i had a few bugs here
