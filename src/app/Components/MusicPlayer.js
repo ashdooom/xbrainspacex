@@ -5,7 +5,7 @@ import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
 
 function MusicPlayer() {
     const [isPlaying, setIsPlaying] = useState(false);
-    const [currentTrack] = useState({ title: 'THE FIRST LADY OF JUICY COUTURE!!!!', url: '/music/juicyCouture.mp3' });
+    const [currentTrack] = useState({ title: 'lying is the most fun a girl can have without taking her clothes off', url: '/music/lying.mp3' });
 
     const sound = new Howl({
         src: [currentTrack.url],
