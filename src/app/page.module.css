@@ -236,6 +236,10 @@
   color: rgb(255, 0, 195);
 }
 
+.brainLink:hover {
+  color: #ffffff;
+}
+
 .promo {
   text-align: center;
 }
