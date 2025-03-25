@@ -114,8 +114,8 @@
 
 .brain {
   margin-top: 100vh;
-  height: 40vh;
-  width: 110vh;
+  height: 25vh;
+  width: 90vh;
   background-image: url("/images/brain-image.webp");
   background-size: cover;
   background-position: center;
@@ -362,7 +362,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #ff00c3;
+  color: #ffffff;
   margin-top: 5vh;
   margin-bottom: 5vh;
 }
