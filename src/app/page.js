@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 import xbrainstewx from "/public/xbrainstewx.png";
-import selfie from "/public/selfie.JPEG";
+import selfie from "/public/selfie.jpeg";
 import onlineNow from "/public/onlineNow.gif";
 import marioStar from "/public/marioStar.gif";
 import diaryLogo from "/public/diary.png";
