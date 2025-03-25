@@ -238,13 +238,12 @@
 
 .onlineNow {
   height: 6vh;
-  width: 35vw;
+  width: 10vw;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 0 auto;
 }
 
 .amy {
