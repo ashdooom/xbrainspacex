@@ -530,12 +530,23 @@
 
   .music {
     width: 80%;
-    margin-top: 2vh;
+    margin-top: 3vh;
     display: flex;
     justify-content: center;
     position: relative;
     height: 10vh;
     width: 35vh;
+  }
+
+  .onlineNow {
+    height: 6vh;
+    width: 40vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
   }
 }
 

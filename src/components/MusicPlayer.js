@@ -74,7 +74,7 @@ function MusicPlayer() {
             </div>
 
             <div style={{
-                width: "120px", color: "#000", left: "5%", position: "absolute", top: "65%", fontSize: "10px"   
+                width: "120px", color: "#000", left: "5%", position: "absolute", top: "80%", fontSize: "10px"   
             }}>
                 <FontAwesomeIcon
                     icon={faStepBackward}
