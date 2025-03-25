@@ -25,7 +25,7 @@ export default function Home() {
         const postsRef = collection(db, "blogPosts");
         const postsQuery = query(postsRef, orderBy("date", "desc"));
         const snapshot = await getDocs(postsQuery);
-  
+
         const postsData = snapshot.docs.map((doc) => {
           const data = doc.data();
           return {
@@ -36,26 +36,40 @@ export default function Home() {
               : "date not found :(",
           };
         });
-  
+
         setPosts(postsData);
       } catch (error) {
         console.error("Firebase fetch error:", error.message);
       }
     };
-  
+
     fetchPosts();
   }, []);
-  
+
+  function formatEmoDate(dateObj) {
+    const mm = String(dateObj.getMonth() + 1).padStart(2, "0");
+    const dd = String(dateObj.getDate()).padStart(2, "0");
+    const yy = String(dateObj.getFullYear()).slice(2);
+
+    let hours = dateObj.getHours();
+    const minutes = String(dateObj.getMinutes()).padStart(2, "0");
+    const ampm = hours >= 12 ? "PM" : "AM";
+    hours = hours % 12 || 12;
+
+    return `${mm}.${dd}.${yy} - ${hours}:${minutes} ${ampm}`;
+  }
+
+
 
   return (
     <div className={styles.page}>
       <main className={styles.main}>
         <div className={styles.pageContainer}>
           <div>
-           <Image src={xbrainstewx} className={styles.brain} />
+            <Image src={xbrainstewx} className={styles.brain} />
           </div>
           <div>
-            <p className={styles.retroPink} style={{ fontSize: "10px", backgroundColor: "#000", padding: "10px"}}>
+            <p className={styles.retroPink} style={{ fontSize: "10px", backgroundColor: "#000", padding: "10px" }}>
               want a website like this? need some artwork or a logo? visit my page at
               <a target="_blank" rel="noopener noreferrer" className={styles.brainLink} href="https://xbrainstewx.com"> xbrainstewx.com </a>
               or shoot me an email at
@@ -120,7 +134,7 @@ export default function Home() {
               </div>
               <div className={styles.diary}>
                 <div className={styles.diaryContainer}>
-                  <div className={styles.retroPink} style={{fontSize: "55px"}}>DIARY</div>
+                  <div className={styles.retroPink} style={{ fontSize: "55px" }}>DIARY</div>
                   <div className={styles.diaryBoxContainer}>
                     <div className={styles.diaryBox}>
                       <div className={styles.mew}>
@@ -130,10 +144,11 @@ export default function Home() {
                         posts.map((post) => (
                           <div key={post.id} className={styles.diaryText}>
                             <div className={styles.dateMood}>
-                              {post.date}
+                              {post.dateFormatted}
                               <br />
                               mood: {post.mood}
                             </div>
+
                             <p>{post.post}</p>
                             <Stars postId={post.id} />
                             <hr />
