@@ -120,7 +120,7 @@ export default function Home() {
               </div>
               <div className={styles.diary}>
                 <div className={styles.diaryContainer}>
-                  <div className={styles.retroPink} style={{fontSize: "65px"}}>DIARY</div>
+                  <div className={styles.retroPink} style={{fontSize: "55px"}}>DIARY</div>
                   <div className={styles.diaryBoxContainer}>
                     <div className={styles.diaryBox}>
                       <div className={styles.mew}>
