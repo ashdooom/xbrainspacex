@@ -17,13 +17,26 @@ html, body {
   padding: 0;
 }
 
-
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-retro-pop);
+  font-size: 12px;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scrollbar-width: thin;
+  scrollbar-color: #ffffff #ff0084; 
+  border-radius: 8px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url("/background.jpg");
+  background-attachment: fixed;
+  background-repeat: repeat;
+  background-position: center;
+  cursor: url(https://cur.cursors-4u.net/anime/ani-6/ani546.cur), auto;
 }
 
 * {
@@ -37,31 +50,25 @@ a {
   text-decoration: none;
 }
 
-body {
-  scrollbar-width: thin;
-  scrollbar-color: #ff00ff #000000;
-}
-
 ::-webkit-scrollbar {
   width: 12px;
 }
 
 ::-webkit-scrollbar-track {
   background: #000000;
-  border: 2px solid #ff00ff;
+  border: 2px solid #00ff00;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #ff00ff;
+  background-color: #00ff00; /* Set thumb color to green */
   border-radius: 8px;
-  border: 2px solid #00ff00;
+  border: 2px solid #ff00ff; /* Set the border to pink for contrast */
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #00ff00;
   border: 2px solid #ff0000;
 }
-
 
 @media (prefers-color-scheme: dark) {
   html {

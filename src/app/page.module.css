@@ -14,6 +14,43 @@
   font-family: monospace;
 }
 
+.retroPink {
+  font-family: var(--font-retro-pop), 'Press Start 2P', monospace;
+  font-size: 1.5rem;
+  color: #ff00c3;
+  text-shadow:
+    1px 1px 0 #ff0099,
+    2px 2px 0 #ff66cc,
+    3px 3px 10px #ff00c3;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+  animation: neonPulse 1.5s ease-in-out infinite alternate;
+}
+
+.retroPink:hover {
+  color: #fff;
+  filter: brightness(120%);
+  cursor: crosshair;
+}
+
+
+@keyframes neonPulse {
+  0% {
+    text-shadow:
+      1px 1px 0 #ff0099,
+      2px 2px 0 #ff66cc,
+      3px 3px 10px #ff00c3;
+  }
+  100% {
+    text-shadow:
+      1px 1px 0 #ff66cc,
+      2px 2px 0 #ff00c3,
+      4px 4px 20px #ff00ff;
+  }
+}
+
+
 @media (prefers-color-scheme: dark) {
   .page {
     --gray-rgb: 255, 255, 255;
@@ -23,6 +60,51 @@
     --button-secondary-hover: #1a1a1a;
   }
 }
+
+@keyframes rainbowGlow {
+  0% {
+    border-color: #ff00c3;
+    box-shadow: 0 0 20px #ff00c3, 0 0 40px #ff00c3;
+  }
+  25% {
+    border-color: #00fff7;
+    box-shadow: 0 0 20px #00fff7, 0 0 40px #00fff7;
+  }
+  50% {
+    border-color: #7cfc00;
+    box-shadow: 0 0 20px #7cfc00, 0 0 40px #7cfc00;
+  }
+  75% {
+    border-color: #ffea00;
+    box-shadow: 0 0 20px #ffea00, 0 0 40px #ffea00;
+  }
+  100% {
+    border-color: #ff00c3;
+    box-shadow: 0 0 20px #ff00c3, 0 0 40px #ff00c3;
+  }
+}
+.glitterText {
+  display: inline-block;
+  font-family: var(--font-retro-pop), 'Press Start 2P', monospace;
+  font-size: 1.2rem;
+  background: linear-gradient(90deg, #ff00c3, #00fff7, #ffff00, #ff00c3);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glitterMove 2s linear infinite;
+  text-shadow: 0 0 5px #ff00c3;
+}
+
+
+@keyframes glitterMove {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+
 
 .pageContainer {
   display: flex;
@@ -48,6 +130,7 @@
   margin-top: 2vh;
   align-items: flex-start;
   width: auto;
+  
 }
 
 .columnContainer {
@@ -60,10 +143,12 @@
   flex-shrink: 1;
   width: 60vh;
   height: 60vh;
-  background-image: url("/gwoomy.webp");
+  background-image: url("/eyeballz.jpg");
   background-size: cover;
   background-position: center;
   border: rgb(255, 0, 195) 1vh solid;
+  animation: rainbowGlow 2s linear infinite;
+  box-shadow: 0 0 20px #ff00c3, 0 0 40px #ff00c3;
 }
 
 .url {
@@ -112,29 +197,21 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 5vh;
-  border: #ff00c3 5px solid;
-}
-
-.extendedImg {
-  width: 55vh;
-  height: 10vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 2vh;
-  padding: 1vh;
 }
 
 .diary {
   flex-shrink: 1;
   width: 60vh;
   height: 70vh;
-  background-image: url("/gwoomy.webp");
+  background-image: url("/eyeballz.jpg");
   background-size: cover;
   background-position: center;
-  border: rgb(255, 0, 195) 1vh solid;
+  border: 1vh solid #ff00c3;
   position: relative;
+  animation: rainbowGlow 2s linear infinite;
+  box-shadow: 0 0 20px #ff00c3, 0 0 40px #ff00c3;
 }
+
 
 
 .name {
@@ -228,7 +305,6 @@
   display: flex;
   justify-content: center;
   position: relative;
-  background-color: #000;
   height: 10vh;
 }
 
@@ -242,7 +318,7 @@
 
 .promo {
   text-align: center;
-}
+} 
 
 .diaryContainer {
   display: flex;
@@ -291,11 +367,6 @@
 }
 
 
-.extended {
-  height: 10vh;
-  position: relative;
-}
-
 .headline {
   background-color: #000;
   font-style: italic;
@@ -309,6 +380,8 @@
     gap: 3vh;
 
   }
+
+
 }
 
 @media (max-width: 956px) {
@@ -326,6 +399,11 @@
     box-sizing: border-box; 
 }
 
+.amy {
+  height: 15vh;
+  width: 10vh;
+  margin-top: 30px;
+}
 
   .brain {
     width: 90vw;
@@ -350,7 +428,7 @@
   }
 
   .aboutMe {
-    background-image: url("/gwoomy.webp");
+    background-image: url("/eyeballz.jpg");
     background-size: cover;
     background-position: center;
     border: rgb(255, 0, 195) 1vh solid;
@@ -438,8 +516,8 @@
 
 
   .selfie {
-    height: 25vh;
-    width: 25vh;
+    height: 50vh;
+    width: 35vh;
     margin: 0 auto;
     margin-top: 3vh;
   }
@@ -455,8 +533,8 @@
     display: flex;
     justify-content: center;
     position: relative;
-    background-color: #000;
     height: 10vh;
     width: 35vh;
   }
 }
+

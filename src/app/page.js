@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 import xbrainstewx from "/public/xbrainstewx.png";
-import selfie from "/public/selfie.png";
+import selfie from "/public/selfie.JPEG";
 import onlineNow from "/public/onlineNow.gif";
 import marioStar from "/public/marioStar.gif";
 import diaryLogo from "/public/diary.png";
@@ -13,7 +13,7 @@ import amy from "/public/amy.gif";
 import extended from "/public/extended.png";
 import Stars from "../components/Stars";
 import MusicPlayer from "../components/MusicPlayer";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, orderBy, Timestamp } from "firebase/firestore";
 import { db } from "./firebaseConfig";
 
 export default function Home() {
@@ -22,33 +22,40 @@ export default function Home() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, "blogPosts"));
-        const postsData = querySnapshot.docs.map((doc) => {
+        const postsRef = collection(db, "blogPosts");
+        const postsQuery = query(postsRef, orderBy("date", "desc"));
+        const snapshot = await getDocs(postsQuery);
+  
+        const postsData = snapshot.docs.map((doc) => {
           const data = doc.data();
-
-          const date = data.date || "Date not available";
-
-          return { id: doc.id, ...data, date };
+          return {
+            id: doc.id,
+            ...data,
+            dateFormatted: data.date?.toDate
+              ? formatEmoDate(data.date.toDate())
+              : "date not found :(",
+          };
         });
+  
         setPosts(postsData);
       } catch (error) {
-        console.error("Error fetching posts:", error);
+        console.error("Firebase fetch error:", error.message);
       }
     };
-
+  
     fetchPosts();
   }, []);
+  
 
   return (
     <div className={styles.page}>
       <main className={styles.main}>
         <div className={styles.pageContainer}>
-          {/* Header Section */}
           <div>
-            <Image className={styles.brain} src={xbrainstewx} alt="Brain Image" />
+           <Image src={xbrainstewx} className={styles.brain} />
           </div>
           <div>
-            <p className={styles.promo}>
+            <p className={styles.retroPink} style={{ fontSize: "10px", backgroundColor: "#000", padding: "10px"}}>
               want a website like this? need some artwork or a logo? visit my page at
               <a target="_blank" rel="noopener noreferrer" className={styles.brainLink} href="https://xbrainstewx.com"> xbrainstewx.com </a>
               or shoot me an email at
@@ -70,14 +77,14 @@ export default function Home() {
 
                   <div className={styles.infoContainer}>
                     <div className={styles.headlineContainer}>
-                      <h1 className={styles.headline}>ashdooom!</h1>
+                      <h1 className={styles.retroPink}> ashdooom! </h1>
                       <p className={styles.quote}>"is it still me who makes you sweat? am i who you think about in bed?"</p>
                       <Image className={styles.marioStar} src={marioStar} alt="Mario Star" />
                     </div>
 
-                    <div className={styles.aslContainer}>
+                    <div className={styles.retroPink}>
                       <h3 className={styles.asl}>
-                        age: 27
+                        age: 28
                         <br />
                         sex: female
                         <br />
@@ -103,7 +110,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Column */}
             <div className={styles.rightColumn}>
               <div className={styles.extended}>
                 <div>
@@ -114,7 +120,7 @@ export default function Home() {
               </div>
               <div className={styles.diary}>
                 <div className={styles.diaryContainer}>
-                  <Image className={styles.diaryLogo} src={diaryLogo} alt="Diary Logo" />
+                  <div className={styles.retroPink} style={{fontSize: "65px"}}>DIARY</div>
                   <div className={styles.diaryBoxContainer}>
                     <div className={styles.diaryBox}>
                       <div className={styles.mew}>

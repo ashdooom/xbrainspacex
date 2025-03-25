@@ -4,7 +4,8 @@ import { db } from "@/app/firebaseConfig";
 
 const Stars = ({ postId }) => {
   const [starred, setStarred] = useState(false);
-  const [starCount, setStarCount] = useState(0);
+  const [starCount, setStarCount] = useState(null);
+
 
   useEffect(() => {
     const fetchStarCount = async () => {
@@ -43,33 +44,33 @@ const Stars = ({ postId }) => {
   };
 
   return (
-    <div style={{ display: "flex", alignItems: "center" }}>
-      <div>
-        <button
-          onClick={handleStarClick}
-          disabled={starred}
-          style={{
-            color: "#ff00c3",
-            backgroundColor: "#000",
-            height: "7vh",
-            width: "12vh",
-            marginLeft: "10vh",
-            marginBottom: "5vh",
-            marginTop: "5vh",
-            margin: "2vh",
-            cursor: starred ? "not-allowed" : "pointer",
-          }}
-        >
-          {starred ? "ty ily" : "✰"}
-        </button>
-        {starred && (
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <div>
+          <button
+            onClick={handleStarClick}
+            disabled={starred}
+            style={{
+              color: "#ff00c3",
+              backgroundColor: "#000",
+              height: "7vh",
+              width: "12vh",
+              marginLeft: "10vh",
+              marginBottom: "5vh",
+              marginTop: "5vh",
+              margin: "2vh",
+              cursor: starred ? "not-allowed" : "pointer",
+            }}
+          >
+            {starred ? "ty ily" : "✰"}
+          </button>
+    
           <span>
             ✰ {starCount}
           </span>
-        )}
+        </div>
       </div>
-    </div>
-  );
+    );
+    
 };
 
 export default Stars;

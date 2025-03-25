@@ -46,24 +46,52 @@ function MusicPlayer() {
     };
 
     return (
-        <div className="musicPlayer" style={{ display: "flex", alignItems: "center", gap: "1vh" }}>
+        <div
+            style={{
+                position: "relative",
+                width: "300px",
+                height: "110px",
+                backgroundImage: "url('/ipod.png')",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                backgroundColor: "none",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-end",
+                alignItems: "center",
+                paddingBottom: "40px",
+                color: "#ff00c3",
+                fontSize: "0.7rem",
+                textAlign: "center",
+                fontFamily: "monospace",
+            }}
+        >
+            <div style={{
+                width: "120px", color: "#000", left: "5%", position: "absolute", top: "15%", fontSize: "10px"
+            }}>
+                {tracks[currentTrackIndex].title}
+            </div>
 
-            <div>{tracks[currentTrackIndex].title}</div>
-            <FontAwesomeIcon
-                icon={faStepBackward}
-                onClick={playPreviousTrack}
-                style={{ cursor: "pointer", fontSize: "1rem", marginRight: "1vh" }}
-            />
-            <FontAwesomeIcon
-                icon={isPlaying ? faPause : faPlay}
-                onClick={togglePlayPause}
-                style={{ cursor: "pointer", fontSize: "1rem", marginLeft: "1vh", marginRight: "1vh" }}
-            />
-            <FontAwesomeIcon
-                icon={faStepForward}
-                onClick={playNextTrack}
-                style={{ cursor: "pointer", fontSize: "1rem", marginLeft: "1vh" }}
-            />
+            <div style={{
+                width: "120px", color: "#000", left: "5%", position: "absolute", top: "65%", fontSize: "10px"   
+            }}>
+                <FontAwesomeIcon
+                    icon={faStepBackward}
+                    onClick={playPreviousTrack}
+                    style={{ cursor: "pointer", padding: "0 10px" }}
+                />
+                <FontAwesomeIcon
+                    icon={isPlaying ? faPause : faPlay}
+                    onClick={togglePlayPause}
+                    style={{ cursor: "pointer", padding: "0 10px" }}
+                />
+                <FontAwesomeIcon
+                    icon={faStepForward}
+                    onClick={playNextTrack}
+                    style={{ cursor: "pointer", padding: "0 10px" }}
+                />
+            </div>
         </div>
     );
 }
